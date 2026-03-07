@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | Smart City Complaint Portal</title>
+
+  <!-- Signup Theme CSS -->
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+
+<body>
+
+<div class="overlay">
+  <div class="signup-card">
+
+    <h2>Create Account</h2>
+
+    <p class="subtitle">
+      Register to raise and track civic issues in your locality
+    </p>
+
+    <!-- BASIC DETAILS -->
+    <input
+      id="name"
+      type="text"
+      placeholder="Full name"
+      autocomplete="off"
+    >
+
+    <input
+      id="email"
+      type="email"
+      placeholder="Email address"
+      autocomplete="off"
+    >
+
+    <input
+      id="phoneNumber"
+      type="text"
+      placeholder="Mobile number"
+      maxlength="10"
+    >
+
+    <!-- LOCATION DETAILS -->
+    <input
+      id="state"
+      type="text"
+      placeholder="State"
+    >
+
+    <input
+      id="district"
+      type="text"
+      placeholder="District"
+    >
+
+    <input
+      id="location"
+      type="text"
+      placeholder="Area / Locality"
+    >
+
+    <input
+      id="pinCode"
+      type="text"
+      placeholder="PIN code"
+      maxlength="6"
+    >
+
+    <!-- PASSWORD -->
+    <input
+      id="password"
+      type="password"
+      placeholder="Create password"
+    >
+
+    <button onclick="signup()">Create Account</button>
+
+    <p id="msg"></p>
+
+    <div class="login-link">
+      <p>
+        Already registered?
+        <a href="login.html">Login here</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- JS -->
+<script src="js/auth.js"></script>
+</body>
+</html>

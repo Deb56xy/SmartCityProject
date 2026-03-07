@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+</head>
+
+    <body style="margin:0; padding:0; background-color:#eaf5ef; font-family:Arial, Helvetica, sans-serif;">
+
+        <!-- Outer Wrapper -->
+        <table role="presentation"
+               cellpadding="0"
+               cellspacing="0"
+               style="width:100%; background-color:#eaf5ef; padding:20px;">
+            <tr>
+                <td align="center">
+
+                    <!-- Email Container -->
+                    <table role="presentation"
+                           cellpadding="0"
+                           cellspacing="0"
+                           style="width:600px; max-width:100%; background-color:#ffffff;
+                                  border-radius:6px; overflow:hidden;">
+
+                        <!-- Header -->
+                        <tr>
+                            <td style="background-color:#2e7d32; padding:20px; text-align:center;">
+                                <h2 style="margin:0; color:#ffffff; font-size:22px;">
+                                    OTP Verification
+                                </h2>
+                            </td>
+                        </tr>
+
+                        <!-- Content -->
+                        <tr>
+                            <td style="padding:30px; color:#2f3e34; font-size:14px; line-height:1.6;">
+
+                                <p style="margin-top:0;">
+                                    Hello <strong>${name}</strong>,
+                                </p>
+
+                                <p>
+                                    Use the One-Time Password (OTP) below to verify your request.
+                                    This OTP is valid for a limited time.
+                                </p>
+
+                                <!-- OTP Box -->
+                                <table role="presentation"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       style="margin:30px auto; background-color:#e6f2ea;
+                                              border:1px dashed #2e7d32; border-radius:6px;">
+                                    <tr>
+                                        <td style="padding:18px 30px; text-align:center;">
+                                            <span style="font-size:28px; font-weight:bold;
+                                                         letter-spacing:6px; color:#2e7d32;">
+                                                ${otp}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <p style="text-align:center; font-size:13px; color:#5f6f65;">
+                                    This OTP will expire in <strong>5 minutes</strong>.
+                                </p>
+
+                                <p style="margin-top:25px;">
+                                    If you did not initiate this request, please ignore this email.
+                                </p>
+
+                                <p>
+                                    For your security, please do not share this OTP with anyone.
+                                </p>
+                            </td>
+                        </tr>
+
+                        <!-- Footer -->
+                        <tr>
+                            <td style="background-color:#e6f2ea; padding:15px;
+                                       text-align:center; font-size:12px; color:#5f6f65;">
+                                © 2026 Complaint Management System<br>
+                                This is an automated message. Please do not reply.
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

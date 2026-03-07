@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Registered</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#eaf5ef; font-family:Arial, Helvetica, sans-serif;">
+
+<!-- Outer Wrapper -->
+<table role="presentation"
+       cellpadding="0"
+       cellspacing="0"
+       style="width:100%; background-color:#eaf5ef; padding:20px;">
+    <tr>
+        <td align="center">
+
+            <!-- Email Container -->
+            <table role="presentation"
+                   cellpadding="0"
+                   cellspacing="0"
+                   style="width:600px; max-width:100%; background-color:#ffffff;
+                          border-radius:6px; overflow:hidden;">
+
+                <!-- Header -->
+                <tr>
+                    <td style="background-color:#2e7d32; padding:20px; text-align:center;">
+                        <h2 style="margin:0; color:#ffffff; font-size:22px;">
+                            Smart City Complaint System
+                        </h2>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td style="padding:30px; color:#2f3e34; font-size:14px; line-height:1.6;">
+
+                        <p style="margin-top:0;">
+                            Hello <strong>${name}</strong>,
+                        </p>
+
+                        <p>
+                            Your complaint has been <strong>successfully registered</strong>.
+                            We’re actively working to resolve it as quickly as possible.
+                        </p>
+
+                        <!-- Details Table -->
+                        <table role="presentation"
+                               cellpadding="0"
+                               cellspacing="0"
+                               style="width:100%; margin:20px 0; border:1px solid #cfe6d8;">
+                            <tr>
+                                <td style="padding:10px; background-color:#e6f2ea; width:40%;">
+                                    <strong>Complaint ID</strong>
+                                </td>
+                                <td style="padding:10px;">
+                                    ${complaintId}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px; background-color:#e6f2ea;">
+                                    <strong>Status</strong>
+                                </td>
+                                <td style="padding:10px;">
+                                    ${status}
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p>
+                            You can view updates, reopen the complaint if needed,
+                            or track progress from your dashboard.
+                        </p>
+
+                        <!-- Button -->
+                        <table role="presentation"
+                               cellpadding="0"
+                               cellspacing="0"
+                               style="margin:30px auto 0;">
+                            <tr>
+                                <td align="center"
+                                    style="background-color:#2e7d32; border-radius:4px;">
+                                    <a href="${dashboardUrl}"
+                                       style="display:inline-block; padding:12px 24px;
+                                              color:#ffffff; text-decoration:none;
+                                              font-size:14px;">
+                                        View Dashboard
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td style="background-color:#e6f2ea; padding:15px;
+                               text-align:center; font-size:12px; color:#5f6f65;">
+                        © 2026 City Complaints Portal<br>
+                        This is an automated email. Please do not reply.
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>

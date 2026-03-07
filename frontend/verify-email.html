@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Verification | Smart City Complaint Portal</title>
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+
+<body>
+
+<div class="overlay">
+  <div class="signup-card">
+
+    <h2>Email Verification</h2>
+
+    <p class="subtitle">
+      Enter the 6-digit verification code sent to your registered email address.
+    </p>
+
+    <!-- OTP INPUT -->
+    <input
+      id="otp"
+      type="text"
+      placeholder="Enter 6-digit OTP"
+      maxlength="6"
+      autocomplete="off"
+    >
+
+    <button onclick="verifyOtp()">Verify Email</button>
+
+    <p id="msg"></p>
+
+    <div class="signup-link">
+      <p>
+        Didn’t receive the code?
+        <a href="#" onclick="resendOtp()">Resend OTP</a>
+      </p>
+
+      <p>
+        Wrong email?
+        <a href="signup.html">Go back to signup</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- JS -->
+<script src="js/verify-otp.js"></script>
+</body>
+</html>

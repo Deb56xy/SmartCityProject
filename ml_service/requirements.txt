@@ -1,0 +1,7 @@
+flask
+psycopg2-binary
+joblib
+scikit-learn==1.8.0
+apscheduler
+requests
+pandas

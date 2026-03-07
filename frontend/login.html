@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login | Smart City Complaint Management System</title>
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+  <body>
+
+    <div class="overlay">
+      <div class="login-card">
+        
+        <h2>Smart City Portal</h2>
+        <p class="subtitle">Citizen & Authority Login</p>
+
+        <input id="email" type="email" placeholder="Email address"><br><br>
+        <input id="password" type="password" placeholder="Password"><br><br>
+        <button onclick="login()">Login</button>
+
+        <p id="msg"></p>
+        <div class="signup-link">
+          <p>
+            New user?
+            <a href="signup.html">Create an account</a>
+          </p>
+          <p>
+            Forgot your password?
+            <a href="forgot-password.html">Reset it here</a>
+          </p>
+          <p>
+            Email not verified?
+            <a href="verify-otp.html">Verify your email</a>
+          </p>
+        </div>
+        <div class="footer-text">
+          @ 2026 Smart City Governance System
+        </div>
+      </div>
+    </div>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

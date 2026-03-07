@@ -1,0 +1,34 @@
+description,category
+Large potholes on the main road causing traffic jams,SERVICE
+Garbage not collected for the last one week,SERVICE
+Traffic signal not working at the busy junction,SERVICE
+Road damaged badly after recent rains,SERVICE
+Overflowing garbage near residential area,SERVICE
+Heavy traffic congestion due to poor road condition,SERVICE
+Open pothole near school creating safety risk,SERVICE
+Electricity bill amount is very high this month,BILLING
+Wrong charges added in my electric supply bill,BILLING
+Gas booking payment deducted but booking not confirmed,BILLING
+Property tax paid but receipt not generated,BILLING
+Electric bill showing late fee even after timely payment,BILLING
+Gas connection bill calculated incorrectly,BILLING
+Property tax amount increased without notification,BILLING
+Electric fuse blown and power supply stopped,TECHNICAL
+Street light not working since last night,TECHNICAL
+Electric pole sparking continuously,TECHNICAL
+Power outage in the area due to transformer issue,TECHNICAL
+Voltage fluctuation damaging household appliances,TECHNICAL
+Street lights flickering frequently,TECHNICAL
+Electric meter not functioning properly,TECHNICAL
+Neighbours playing loud music late at night,BEHAVIOUR
+Drunk people creating nuisance in the street at night,BEHAVIOUR
+Neighbour shouting and disturbing residents,BEHAVIOUR
+Loud music during holidays disturbing elderly people,BEHAVIOUR
+Area feels unsafe for women during night hours,BEHAVIOUR
+Public drinking happening near residential area,BEHAVIOUR
+Continuous noise from nearby house causing disturbance,BEHAVIOUR
+Request for general information regarding services,OTHER
+Suggestion to improve city cleanliness,OTHER
+Feedback about complaint portal experience,OTHER
+Need guidance on how to raise a complaint,OTHER
+Query related to office working hours,OTHER

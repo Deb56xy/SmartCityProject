@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-left">Smart City Complaint Management System</div>
+        <div class="nav-right">
+            <div class="profile-wrapper">
+                <div class="user-avatar" id="userAvatar" onclick="toggleProfile()">--</div>
+
+                <!-- Profile Card -->
+                <div class="profile-card" id="profileCard">
+                    <h4 id="pName"></h4>
+                    <p class="p-email" id="pEmail"></p>
+
+                    <div class="profile-info">
+                        <div><b>Phone:</b> <span id="pPhone"></span></div>
+                        <div><b>Location:</b> <span id="pLocation"></span></div>
+                        <div><b>District:</b> <span id="pDistrict"></span></div>
+                        <div><b>State:</b> <span id="pState"></span></div>
+                    </div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="filters">
+        <input id="search" placeholder="Search by Title">
+        <select id="statusFilter">
+            <option value="">All Status</option>
+        </select>
+        <select id="priorityFilter">
+            <option value="">All Priority</option>
+        </select>
+    </section>
+
+    <section class="table-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Complaint ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Ward</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Assigned Officer</th>
+                    <th>Created date</th>
+                    <th>SLA Due Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="complaintTable"></tbody>
+        </table>
+
+        <div class="pagination" id="pagination">
+            <button id="prevBtn" class="page-btn">« Prev</button>
+            <div id="pageNumbers" class="page-numbers"></div>
+            <button id="nextBtn" class="page-btn">Next »</button>
+        </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section class="analytics">
+        <!-- Complaints by Status -->
+        <div class="analytics-card">
+            <h4>Complaints by Status</h4>
+            <canvas id="statusChart"></canvas>
+        </div>
+
+        <!-- Complaints by Type -->
+        <div class="analytics-card">
+            <h4>Complaints by Type</h4>
+            <canvas id="typeChart"></canvas>
+        </div>
+
+        <!-- Top Performing Officers -->
+        <div class="analytics-card">
+            <h4>Top Performing Officers</h4>
+            <ul id="topOfficers" class="officer-list"></ul>
+        </div>
+    </section>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/admin-dashboard.js"></script>
+
+    <div class="modal-overlay" id="complaintModal">
+        <div class="modal">
+
+            <div class="modal-header">
+                <h3>Complaint Details</h3>
+                <button class="modal-close" onclick="closeComplaintModal()">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-row">
+                    <span class="label">Created By</span>
+                    <span class="value" id="mCreatedBy"></span>
+                </div>
+
+                <div class="modal-row">
+                    <span class="label">Description</span>
+                    <p class="value description" id="mDescription"></p>
+                </div>
+
+                <div class="modal-grid">
+                    <div>
+                        <span class="label">Ward</span>
+                        <span class="value" id="mWard"></span>
+                    </div>
+                    <div>
+                        <span class="label">Location</span>
+                        <span class="value" id="mLocation"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeComplaintModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assign Authority Modal -->
+    <div class="modal-overlay" id="assignModal">
+        <div class="modal">
+
+            <div class="modal-header">
+                <h3>Assign Authority</h3>
+                <button onclick="closeAssignModal()">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input id="authoritySearch" type="text" placeholder="Search authority by name"
+                        oninput="searchAuthority()" />
+                    <ul id="authorityList" class="authority-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

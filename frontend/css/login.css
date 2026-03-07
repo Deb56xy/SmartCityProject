@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("../images/smart-city-bg.jpeg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vw;
+    background: rgba(22, 120, 70, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    position: inherit;
+    top: 200px;
+    background: rgba(255, 255, 255, 0.97);
+    width: 360px;
+    padding: 26px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #145a32;
+    margin-bottom: 6px;
+    font-size: 32px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #2e7d32;
+    margin-bottom: 18px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 11px;
+    margin: 8px 0;
+    border: 1px solid #b7d4b7;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: math;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #27ae60;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 11px;
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-card button:hover {
+    background: linear-gradient(to right, #27ae60, #1e8449)
+}
+
+#msg {
+    margin-top: 6px;
+    color: red;
+    font-size: 16px;
+}
+
+.signup-link {
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.signup-link p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #4f6f5a;
+}
+
+.signup-link a {
+    color: #1e8449;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #6e8f6e;
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Authority Dashboard</title>
+    <link rel="stylesheet" href="css/authority-dashboard.css">
+</head>
+
+<body>
+    <!-- Top Navbar -->
+    <header class="navbar">
+        <div class="nav-left">Smart City Complaint Management System</div>
+        <div class="nav-right">
+            <div class="profile-wrapper">
+                <div class="user-avatar" id="userAvatar" onclick="toggleProfile()">--</div>
+
+                <!-- Profile Card -->
+                <div class="profile-card" id="profileCard">
+                    <h4 id="pName"></h4>
+                    <p class="p-email" id="pEmail"></p>
+
+                    <div class="profile-info">
+                        <div><b>Phone:</b> <span id="pPhone"></span></div>
+                        <div><b>Location:</b> <span id="pLocation"></span></div>
+                        <div><b>District:</b> <span id="pDistrict"></span></div>
+                        <div><b>State:</b> <span id="pState"></span></div>
+                    </div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="grid">
+
+            <!-- Assigned To Me -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>New Complaints Assigned To Me</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Complaint ID</th>
+                            <th>Title</th>
+                            <th>SLA Due Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="complaintTableBody"></tbody>
+                </table>
+                <div class="pagination" id="pagination">
+                    <button id="prevBtn" class="page-btn">« Prev</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextBtn" class="page-btn">Next »</button>
+                </div>
+            </section>
+
+            <!-- Dept Unassigned -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>New Complaints in My Department (Not Assigned Yet)</h2>
+                    <span class="count">12</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Ward</th>
+                            <th>Submitted</th>
+                            <th>Priority</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>115</td>
+                            <td>Street Light Issue</td>
+                            <td>04</td>
+                            <td>10 Apr 2024</td>
+                            <td><span class="badge low">LOW</span></td>
+                            <td><button class="btn assign">Assign</button></td>
+                        </tr>
+                        <tr>
+                            <td>119</td>
+                            <td>Drain Blocked</td>
+                            <td>07</td>
+                            <td>9 Apr 2024</td>
+                            <td><span class="badge high">HIGH</span></td>
+                            <td><button class="btn assign">Assign</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Completed By Me -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>Completed Complaints By Me</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Resolved Date</th>
+                            <th>Time Taken</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="completedComplaintTableBody"></tbody>
+                </table>
+                <div class="pagination" id="completedPagination"></div>
+            </section>
+
+            <!-- Performance Analysis -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>Performance Analysis of My Department</h2>
+                </div>
+                <div class="chart">
+                    <div class="bar" style="height:45%">Suresh</div>
+                    <div class="bar" style="height:65%">Ramesh</div>
+                    <div class="bar me" style="height:85%">Me</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Complaint Details Modal -->
+    <div class="modal-overlay" id="complaintModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Complaint Details</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-row">
+                    <span class="label">Description</span>
+                    <p class="value description" id="desc"></p>
+                </div>
+
+                <div class="modal-row">
+                    <span class="label">Created By</span>
+                    <span class="value" id="createdBy"></span>
+                </div>
+
+                <div class="modal-row">
+                    <span class="label">Created On</span>
+                    <span class="value" id="createdOn"></span>
+                </div>
+
+                <div class="modal-grid">
+                    <div>
+                        <span class="label">Ward</span>
+                        <span class="value" id="ward"></span>
+                    </div>
+                    <div>
+                        <span class="label">Location</span>
+                        <span class="value" id="location"></span>
+                    </div>
+                </div>
+
+                <div class="meta-row">
+                    <div class="meta-item">
+                        <label>Status</label>
+                        <div id="statusWrap" class="meta-value status">
+                            <select id="statusSelect" class="text-select"></select>
+                        </div>
+                    </div>
+
+                    <div class="meta-item">
+                        <label>Priority</label>
+                        <div id="priorityWrap" class="meta-value priority">
+                            <select id="prioritySelect" class="text-select"></select>
+                        </div>
+                    </div>
+
+                    <div class="meta-item">
+                        <label>Category</label>
+                        <div class="meta-value">
+                            <select id="categorySelect" class="text-select"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="closeBtn" class="btn btn-close" onclick="closeModal()">Close</button>
+                <button id="saveBtn" class="btn btn-save" onclick="updateComplaint()" disabled>Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="completedComplaintModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Complaint Details</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-row">
+                    <span class="label">Description</span>
+                    <p class="value description" id="cDesc"></p>
+                </div>
+
+                <div class="modal-row">
+                    <span class="label">Created By</span>
+                    <span class="value" id="cCreatedBy"></span>
+                </div>
+
+                <div class="modal-row">
+                    <span class="label">Created On</span>
+                    <span class="value" id="cCreatedOn"></span>
+                </div>
+
+                <div class="modal-grid">
+                    <div>
+                        <span class="label">Ward</span>
+                        <span class="value" id="cWard"></span>
+                    </div>
+                    <div>
+                        <span class="label">Location</span>
+                        <span class="value" id="cLocation"></span>
+                    </div>
+                </div>
+
+                <div class="meta-row">
+                    <div class="meta-item">
+                        <label>Priority</label>
+                        <div id="priorityWrap" class="completed-meta-value">
+                            <span id="cPriority" class="priority"></span>
+                        </div>
+                    </div>
+
+                    <div class="meta-item">
+                        <label>Category</label>
+                        <div class="completed-meta-value">
+                            <span id="cCategory" class="priority"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/authority-dashboard.js"></script>
+</body>
+
+</html>

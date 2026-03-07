@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("../images/smart-city-signup-bg.jpeg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(18, 110, 70, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-card {
+    position: inherit;
+    top: 11px;
+    background: rgba(255, 255, 255, 0.97);
+    width: 400px;
+    padding: 26px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.signup-card h2 {
+    color: #145a32;
+    margin-bottom: 6px;
+    font-size: 30px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #2e7d32;
+    margin-bottom: 18px;
+}
+
+.signup-card input {
+    width: 100%;
+    padding: 11px;
+    margin: 8px 0;
+    border: 1px solid #b7d4b7;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: math;
+}
+
+.signup-card input:focus {
+    outline: none;
+    border-color: #27ae60;
+}
+
+.signup-card button {
+    width: 100%;
+    padding: 11px;
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signup-card button:hover {
+    background: linear-gradient(to right, #27ae60, #1e8449)
+}
+
+#msg {
+    margin-top: 6px;
+    color: red;
+    font-size: 16px;
+}
+
+.login-link {
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+.login-link a {
+    color: #1e8449;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
