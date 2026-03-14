@@ -36,7 +36,7 @@ function loadMyComplaints() {
     })
         .then(r => {
             if (r.status === 401) {
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
                 return;
             }
             return r.json();
@@ -262,7 +262,7 @@ function submitComplaint() {
             if (!response.ok) {
                 throw new Error("Failed to submit complaint");
             } else if (response.status === 401) {
-                window.location.href = "login.html";
+                window.location.href = "index.html";
                 return;
             }
             return response.json();
@@ -376,7 +376,7 @@ function confirmReopen() {
 
 function logout() {
     localStorage.clear();
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 function getInitials(name) {
