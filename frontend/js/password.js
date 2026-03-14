@@ -61,7 +61,7 @@ function resetPassword() {
     .then(() => {
       alert("Password reset successful. Please login.");
       localStorage.removeItem("resetUserId");
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     })
     .catch(err => {
       msg.innerText = err.message;
