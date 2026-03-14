@@ -105,7 +105,7 @@ function loadFilters() {
 
 function logout() {
     localStorage.clear();
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 function loadDashboard() {
@@ -386,7 +386,7 @@ function loadAnalytics() {
         if (!response.ok) {
             throw new Error("Failed to fetch analytics");
         } else if (response.status === 401) {
-            window.location.href = "login.html";
+            window.location.href = "index.html";
             return;
         }
         return response.json();
