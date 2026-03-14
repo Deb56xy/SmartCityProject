@@ -34,7 +34,7 @@ function verifyOtp() {
     .then(() => {
       alert("Email verified successfully. Please login.");
       localStorage.removeItem("userId");
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     })
     .catch(err => {
       msg.innerText = err.message;
